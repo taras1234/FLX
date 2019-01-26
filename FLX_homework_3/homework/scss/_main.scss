@@ -1,0 +1,280 @@
+// Write your styles here
+
+@mixin headerLinks {
+  color: $headerLinkColor;
+  font-size: to-upper-case;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+	font-weight: bold
+}
+
+@mixin h1 {
+	font: $pageFonts;
+	text-transform: uppercase;
+	font-size: $fontBig;
+	font-weight: bold;
+	color: $headerLinkColor;
+}
+
+@mixin backgroundCentralButton {
+	font: $pageFonts;
+	text-transform: uppercase;
+	font-size: $fontSmall;
+	color: #fffaea;
+	background: $battonBackGround;
+	text-decoration: none;
+  cursor: pointer;
+  width:200px;
+  height: 45px;
+}
+
+body {
+  max-width: 1453px;
+  margin: 0;
+  background-color: $mainColor;
+  
+  .main-wrapper {
+    margin: 0 auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    header{
+      background: $headerBackground;
+      height: 100vh;
+
+      .top-wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        .logo{
+          width: 15%;
+          img{
+            width: 100%
+          }
+        }
+
+        nav {
+          margin-top: 20px;
+
+          a{
+            @include headerLinks;
+            padding: 20px 80px;
+            border-left: 2px solid $borderColor;
+            &:first-child{
+              border-left: none;
+            }
+          }
+        }
+      }
+      
+      section{
+        display: flex;
+        flex-direction: column;
+        
+
+        h1{
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          margin-top: 20%;
+          @include h1;
+          display: flex;
+        }
+
+        a{
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          @include backgroundCentralButton;
+          text-align: center;	
+        }
+      } 
+    }
+  }
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 70%;
+}
+.toolbar{
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px 12px;
+  
+}
+.post-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1{
+    margin: 0;
+    align-self: flex-end;
+    text-transform: uppercase;
+  }
+}
+article {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: $articleBackGround;
+  img {
+      margin: 10px;
+      height: 280px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+  }
+}
+.post{
+
+    .post-description{
+      padding: 14px 20px 5px 10px;
+      color: $inMainColorTextHeader;
+      border-bottom: 1px solid $inMainColorHeaderBottom;
+    }
+
+    h3{
+      text-transform: uppercase;
+      color: $h3color;
+    }
+
+    p{
+      font-size: $fontSmall;
+      font-family: $pageFonts;
+      line-height: 19px;
+      letter-spacing: 1.5px;
+      word-spacing: 6px;
+    }  
+}
+.btn{
+  width: 200px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  background: $buttonMainBg;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  &:hover{
+    cursor: pointer;
+    background: lighten($buttonMainBg, 20%);
+  }
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+    div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-transform: uppercase;
+      }
+
+      p{
+        font-size: $fontSmall;
+        font-family: $pageFonts;
+        line-height: 19px;
+        letter-spacing: 1.5px;
+        word-spacing: 6.3px;
+      }
+    }
+
+}
+
+.about img{
+  max-width: 100%;
+}
+
+.contact-form{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+    h1 {
+      align-self: flex-end;
+      margin-bottom: 0px;
+    }
+    h4{
+      align-self: flex-end;
+      margin-top: 0px;
+      padding-top: 0px;
+    }   
+}
+
+footer{
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+.formInputs{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 8px 5px 0;
+  input{
+    display: flex;
+    width: 450px;
+    height: 40px;
+    border: 1px solid $borderColor;
+  }
+  label{
+    display: flex;
+    justify-content: flex-end;
+    color: $label;    
+  }
+}
+.textarea{
+  display: flex;
+  flex-direction: column;
+  
+   label{
+     display: flex;
+     flex-direction: column;
+     align-self: flex-end;
+     color: $label;
+   }
+   textarea{
+    border: 1px solid $borderColor;
+   }
+}
+
+.btnForm{
+  width: 200px;
+  height: 35px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  background: $buttonMainBg;
+  border: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  &:hover{
+    cursor: pointer;
+    background: lighten($buttonMainBg, 20%);
+  }
+}
+
+h1{
+  color: $h1;
+}
+p,h4{
+  color: $p;
+}
+
+
+
