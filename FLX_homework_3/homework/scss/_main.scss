@@ -2,7 +2,6 @@
 
 @mixin headerLinks {
   color: $headerLinkColor;
-  font-size: to-upper-case;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 15px;
@@ -35,14 +34,15 @@ body {
   background-color: $mainColor;
   
   .main-wrapper {
-    margin: 0 auto;
-    width: 100vw;
+    margin: 0;
+    
     display: flex;
     flex-direction: column;
 
     header{
       background: $headerBackground;
       height: 100vh;
+      width: 100%;
 
       .top-wrapper{
         display: flex;
