@@ -1,4 +1,5 @@
 let play = confirm('Do you want to play a game?');
+let games = 0;
 while(play){
   let number = 5;
   let randomNumber = Math.floor(Math.random()*number) + 1;
@@ -14,7 +15,7 @@ while(play){
     Total prize: ${allPrize}$
     Possible prize on current attempt: ${nowPrize}$`);
     if(Number(playerNumber) === randomNumber && !isNaN(parseFloat(playerNumber))) {
-      allPrize += maxPrize;
+      allPrize += nowPrize;
       startEtemp = 0;
       endEtemp = 3;
       number *= 2;
@@ -25,13 +26,14 @@ while(play){
     } else {
       endEtemp--;
       startEtemp++;
-      nowPrize = Math.floor(maxPrize / 2 );
+      nowPrize = Math.floor(maxPrize /(startEtemp*2) );
     } 
   }
     alert( `Thank you for a game. Your prize is:  ${allPrize}`);
     play = confirm('Do you want to try again?');
+    games++;
 }
-if(!play) {
+if(!games) {
   alert('You did not become a millionaire, but can.');
 } 
 
